@@ -29,7 +29,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,
-    /AppRoutingModule,
+    //AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: AppComponent},
       { path: 'login', component: LoginComponent},
