@@ -9,7 +9,7 @@ import { RouterModule,  } from '@angular/router';
 export class AppComponent  {
 
   name = 'Angular'; 
-  menu = 'login';
+  menu = 'home';
   constructor(private router: RouterModule){
 
   }
