@@ -4,5 +4,7 @@
 login works!
 </p>
 
-<input type="text" />
-<input type="text" />
+<form [formGroup]="loginForm" >
+  <input formControlName="userName" type="text" />
+  <input formControlName="password" type="text" />
+</form>
