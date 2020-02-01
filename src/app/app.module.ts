@@ -11,6 +11,11 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './routing/routing.module';
 
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+
+import { config } from './configs/config'
+
 // MATERIAL
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -30,6 +35,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatButtonModule,
     MatToolbarModule,
     //AppRoutingModule,
+    AngularFireModule.initializeApp(config.firebase),
     RouterModule.forRoot([
       { path: '', component: AppComponent},
       { path: 'login', component: LoginComponent},
