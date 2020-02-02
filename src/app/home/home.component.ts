@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
       .doc("tuckshop sales")
       .valueChanges()
       .subscribe(data => {
-        this.products = Array.of(data.diapers.softcare);
+        this.products = Array.of(data.diapers);
         //this.products = JSON.parse(this.products);
         //console.log("This is ",this.products[0]);
         // = JSON.parse();
