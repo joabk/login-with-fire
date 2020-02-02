@@ -11,7 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './routing/routing.module';
 
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 
 import { config } from './configs/config'
@@ -22,9 +22,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+
+//ERROR HANDLER
+import { ErrorHandler } from '@angular/core';
+import { AppErrorHandler } from './common/errors/app-error-handler';
  
 @NgModule({
-  imports: [ 
+  imports: [
     BrowserModule, 
     FormsModule,
     ReactiveFormsModule,
@@ -49,6 +53,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     LoginComponent, 
     HomeComponent, 
     RegisterComponent ],
-  bootstrap:    [ AppComponent ]
+  providers:[
+    AngularFireAuth,
+    { provide: ErrorHandler, useClass: AppErrorHandler }
+  ],
+  bootstrap:[ AppComponent ]
 })
 export class AppModule { }
