@@ -2,12 +2,26 @@
   <ng-template *ngIf="email;then loggedIn else notLoggedIn"></ng-template>
   <ng-template #loggedIn>
     Welcome {{ email }} <br><br>
-    <pre> {{ products | json }} </pre>
-    <ul class="list-group">
-      <li *ngFor=" let product of products">
-        {{ product.softcare[1].name }}
-      </li>
-    </ul>
+     <pre> {{ products | json }} </pre>
+    <mat-form-field class="el-full-width">
+      <mat-label>Search</mat-label>
+      <input matInput class=""> 
+    </mat-form-field>
+
+    <div *ngFor="let product of products; index as i">
+      {{ getKey(product)[i] }}
+      <div *ngFor="let item of product.softcare">
+        {{ item | json }}
+      </div>
+      <!--
+      <ul class="list-group">
+        <li *ngFor="let item of product[i+1];">
+          {{ item |json }}
+        </li>        
+      </ul>
+      -->
+    </div>
+    
   <button (click)="logout()">Logout</button>
   </ng-template>
   <ng-template #notLoggedIn>

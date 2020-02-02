@@ -37,12 +37,12 @@ export class HomeComponent implements OnInit {
       .doc("tuckshop sales")
       .valueChanges()
       .subscribe(data => {
-        this.products = Array.of(data.diapers);
+        this.products = Array.of(data);
         //this.products = JSON.parse(this.products);
         //console.log("This is ",this.products[0]);
         // = JSON.parse();
         //JSON.stringify(credentials)
-        console.log("data", data);
+        //console.log("data", data);
       });
   }
 
@@ -52,4 +52,9 @@ export class HomeComponent implements OnInit {
       this.router.navigate(["/login"]);
     });
   }
+
+  getKey(obj){
+    return Object.keys(obj);
+  }
+
 }
