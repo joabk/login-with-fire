@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 //AUTH
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -11,7 +11,10 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class HomeComponent implements OnInit {
   email;
-  constructor(private userAuth: AngularFireAuth) { 
+  constructor(
+    private userAuth: AngularFireAuth,
+    private router: Router
+    ) { 
     userAuth.authState.subscribe(data=>{
       this.email = data.email
     })
@@ -24,7 +27,7 @@ export class HomeComponent implements OnInit {
   logout(){
     this.userAuth.auth.signOut().then(data=>{
       this.email= '';
-      console.log(data);
+      this.router.navigate(["/login"]);
     })
   }
 

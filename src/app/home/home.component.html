@@ -1,4 +1,12 @@
 <mat-card>
-  The email is {{ email }} <br><br>
+  <ng-template *ngIf="email;then loggedIn else notLoggedIn"></ng-template>
+  <div *ngIf="email" >
+    The email is {{ email }} <br><br>
   <button (click)="logout()">Logout</button>
+  </div>
+  <div *ngIf="!email">
+    Please login first<br><br>
+  <button routerLink="/login">login</button>
+  </div>
+  
 </mat-card>
