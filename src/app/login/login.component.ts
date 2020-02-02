@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private userAuth: AngularFireAuth
-    /*private router: Router*/
+    private userAuth: AngularFireAuth,
+    private router: Router
     ) { }
 
   loginForm = new FormGroup({
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     if(formData.valid){
       this.userAuth.auth.signInWithEmailAndPassword(formData.value.userName, formData.value.password)
         .then(reponse=>{
-          console.log(reponse);
+          this.router.navigate(["/"]);
         })
     }
     
