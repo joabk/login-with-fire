@@ -4,7 +4,9 @@
     Welcome {{ email }} <br><br>
     <pre> {{ products | json }} </pre>
     <ul class="list-group">
-      
+      <li *ngFor=" let product of products">
+        product
+      </li>
     </ul>
   <button (click)="logout()">Logout</button>
   </ng-template>
