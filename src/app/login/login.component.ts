@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private auth: AngularFireAuth
+    private userAuth: AngularFireAuth
     /*private router: Router*/
     ) { }
 
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   login(formData: FormGroup){
     
     if(formData.valid){
-      this.auth.auth.signInWithEmailAndPassword(formData.value.userName, formData.value.password)
+      this.userAuth.auth.signInWithEmailAndPassword(formData.value.userName, formData.value.password)
         .then(reponse=>{
           console.log(reponse);
         })
