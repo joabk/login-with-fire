@@ -21,6 +21,7 @@ import { Observable } from "rxjs";
 export class HomeComponent implements OnInit {
   email;
   products;
+  subProduct;
   constructor(
     private userAuth: AngularFireAuth,
     private router: Router,
