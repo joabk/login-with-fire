@@ -11,9 +11,6 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './routing/routing.module';
 
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFireModule } from '@angular/fire';
-
 import { config } from './configs/config'
 
 // MATERIAL
@@ -27,6 +24,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ErrorHandler } from '@angular/core';
 import { AppErrorHandler } from './common/errors/app-error-handler';
 import { SpinnerComponent } from './common/spinner/spinner.component';
+
+//ANGULAR DATABASE
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestore } from '@angular/fire/firestore';
  
 @NgModule({
   imports: [
@@ -38,7 +40,7 @@ import { SpinnerComponent } from './common/spinner/spinner.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatToolbarModule,
+    MatToolbarModule,    
     //AppRoutingModule,
     AngularFireModule.initializeApp(config.firebase),
     RouterModule.forRoot([
@@ -56,6 +58,7 @@ import { SpinnerComponent } from './common/spinner/spinner.component';
     RegisterComponent, SpinnerComponent ],
   providers:[
     AngularFireAuth,
+    AngularFirestore,
     { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap:[ AppComponent ]

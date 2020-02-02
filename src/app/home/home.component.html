@@ -1,13 +1,20 @@
 <mat-card>
   <ng-template *ngIf="email;then loggedIn else notLoggedIn"></ng-template>
   <ng-template #loggedIn>
-    The email is {{ email }} <br><br>
+    Welcome {{ email }} <br><br>
+    {{ product | json }}
+    <ul class="list-group">
+      <li *ngFor="let product of products" class="list-group-item">
+        {{ product | json }}
+      </li>
+    </ul>
   <button (click)="logout()">Logout</button>
   </ng-template>
   <ng-template #notLoggedIn>
     Please login first<br><br>
 
   <button mat-button routerLink="/login">login</button>
+
   </ng-template>
   
 </mat-card>

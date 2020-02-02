@@ -1,5 +1,5 @@
 /* Add application styles & imports to this file! */
-/*@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');*/
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
