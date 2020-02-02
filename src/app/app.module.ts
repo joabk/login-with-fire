@@ -22,7 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+ 
 @NgModule({
   imports: [ 
     BrowserModule, 
@@ -37,7 +37,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     //AppRoutingModule,
     AngularFireModule.initializeApp(config.firebase),
     RouterModule.forRoot([
-      { path: '', component: AppComponent},
+      { path: '', component: HomeComponent},
       { path: 'login', component: LoginComponent},
       { path: 'home', component: HomeComponent},
       { path: 'register', component: RegisterComponent},
