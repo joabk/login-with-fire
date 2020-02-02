@@ -2,11 +2,9 @@
   <ng-template *ngIf="email;then loggedIn else notLoggedIn"></ng-template>
   <ng-template #loggedIn>
     Welcome {{ email }} <br><br>
-    {{ product | json }}
+    <pre> {{ products | json }} </pre>
     <ul class="list-group">
-      <li *ngFor="let product of products" class="list-group-item">
-        {{ product | json }}
-      </li>
+      
     </ul>
   <button (click)="logout()">Logout</button>
   </ng-template>

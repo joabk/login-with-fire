@@ -36,11 +36,13 @@ export class HomeComponent implements OnInit {
       .collection("tuckshop")
       .doc("tuckshop sales")
       .valueChanges()
-      .map(response => response)
       .subscribe(data => {
-        data = JSON.stringify(data);
-        this.products = JSON.parse();
-        console.log("data", data);
+        this.products = data;
+        //this.products = JSON.parse(this.products);
+        //console.log("This is ",this.products[0]);
+        // = JSON.parse();
+        //JSON.stringify(credentials)
+        console.log("data", data.diapers);
       });
   }
 
