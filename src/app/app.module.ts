@@ -26,6 +26,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 //ERROR HANDLER
 import { ErrorHandler } from '@angular/core';
 import { AppErrorHandler } from './common/errors/app-error-handler';
+import { SpinnerComponent } from './common/spinner/spinner.component';
  
 @NgModule({
   imports: [
@@ -52,7 +53,7 @@ import { AppErrorHandler } from './common/errors/app-error-handler';
     HelloComponent, 
     LoginComponent, 
     HomeComponent, 
-    RegisterComponent ],
+    RegisterComponent, SpinnerComponent ],
   providers:[
     AngularFireAuth,
     { provide: ErrorHandler, useClass: AppErrorHandler }
