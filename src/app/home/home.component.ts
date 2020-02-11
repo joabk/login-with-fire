@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
     this.afs
       .collection("tuckshop")
       .doc("tuckshop sales")
-      /.object
+      //.object
       .valueChanges()
       .subscribe(data => {
         this.products = Array.of(data);
