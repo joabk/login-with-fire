@@ -16,7 +16,7 @@ export class AuthService {
   login(email: string, password: string): void{
     this.appAuth.auth.signInWithEmailAndPassword(email, password)
       .then(results=>{
-        console.log("Login successful", results);
+        //console.log("Login successful", results);
       })
       .catch(err=>{
         console.log("Something went wrong", err.message);
@@ -26,7 +26,7 @@ export class AuthService {
   register(email: string, password: string): void{
     this.appAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(res=>{
-        console.log("Account created successfully ", res);
+        //console.log("Account created successfully ", res);
       })
   }
 

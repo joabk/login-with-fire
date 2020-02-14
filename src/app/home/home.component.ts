@@ -50,8 +50,8 @@ export class HomeComponent implements OnInit {
 
   logout() {
     this.userAuth.auth.signOut().then(data => {
-      this.email = "";
-      this.router.navigate(["/login"]);
+      //this.email = "";
+      //this.router.navigate(["/login"]);
     });
   }
 

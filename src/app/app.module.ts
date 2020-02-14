@@ -30,6 +30,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from './common/auth.service';
+
+//BOOTSTRAP
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
  
 @NgModule({
   imports: [
@@ -42,6 +45,7 @@ import { AuthService } from './common/auth.service';
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,    
+    NgbModule,
     //AppRoutingModule,
     AngularFireModule.initializeApp(config.firebase),
     RouterModule.forRoot([
@@ -56,7 +60,9 @@ import { AuthService } from './common/auth.service';
     HelloComponent, 
     LoginComponent, 
     HomeComponent, 
-    RegisterComponent, SpinnerComponent ],
+    RegisterComponent, 
+    SpinnerComponent 
+    ],
   providers:[
     AngularFireAuth,
     AngularFirestore,
