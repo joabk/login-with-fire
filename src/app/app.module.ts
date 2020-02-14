@@ -29,6 +29,7 @@ import { SpinnerComponent } from './common/spinner/spinner.component';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from './common/auth.service';
  
 @NgModule({
   imports: [
@@ -59,6 +60,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providers:[
     AngularFireAuth,
     AngularFirestore,
+    AuthService,
     { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap:[ AppComponent ]

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../common/auth.service';
+import { NgbModel } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,7 @@ import { RouterModule } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService){}
 
   ngOnInit() {
   }
@@ -20,4 +22,23 @@ export class RegisterComponent implements OnInit {
     password: new FormControl('',Validators.required),
     confirmPassword: new FormControl('', Validators.required)
   })
+
+  register(){
+    this.authService.register(this.emailAddress.value,this.password.value);
+  }
+  get emailAddress(){
+    return this.registrationFrom.get('emailAddress');
+  }
+
+  get password(){
+    return this.registrationFrom.get('password');
+  }
+
+  get confirmPassword(){
+    return this.registrationFrom.get('confirmPassword');
+  }
+
+  get fullName(){
+    return this.registrationFrom.get('fullName');
+  }
 }
