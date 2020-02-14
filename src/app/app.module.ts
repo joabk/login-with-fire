@@ -45,7 +45,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,    
-    NgbModule,
+   / NgbModule,
     //AppRoutingModule,
     AngularFireModule.initializeApp(config.firebase),
     RouterModule.forRoot([
