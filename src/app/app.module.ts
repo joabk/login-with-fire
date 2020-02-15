@@ -29,6 +29,8 @@ import { SpinnerComponent } from './common/spinner/spinner.component';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
  
 @NgModule({
   imports: [
@@ -41,6 +43,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,    
+    NgbModule,
     //AppRoutingModule,
     AngularFireModule.initializeApp(config.firebase),
     RouterModule.forRoot([
