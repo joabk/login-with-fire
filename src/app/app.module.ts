@@ -29,10 +29,6 @@ import { SpinnerComponent } from './common/spinner/spinner.component';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { AuthService } from './common/auth.service';
-
-//BOOTSTRAP
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
  
 @NgModule({
   imports: [
@@ -45,7 +41,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,    
-   / NgbModule,
     //AppRoutingModule,
     AngularFireModule.initializeApp(config.firebase),
     RouterModule.forRoot([
@@ -60,13 +55,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HelloComponent, 
     LoginComponent, 
     HomeComponent, 
-    RegisterComponent, 
-    SpinnerComponent 
-    ],
+    RegisterComponent, SpinnerComponent ],
   providers:[
     AngularFireAuth,
     AngularFirestore,
-    AuthService,
     { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap:[ AppComponent ]
